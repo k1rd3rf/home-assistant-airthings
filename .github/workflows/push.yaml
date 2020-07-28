@@ -1,0 +1,12 @@
+on: push
+name: on push
+jobs:
+  onPush:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Lint
+        uses: cclauss/GitHub-Action-for-Flake8@master
+        with:
+          args: flake8 ./custom_components --count --select=E9,F63,F7,F82 --show-source --statistics
