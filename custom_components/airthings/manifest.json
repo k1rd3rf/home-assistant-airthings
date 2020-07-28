@@ -1,0 +1,10 @@
+{
+  "domain": "airthings",
+  "name": "Airthings",
+  "documentation": "https://developer.airthings.com/api-docs.html",
+  "dependencies": ["http"],
+  "codeowners": [],
+  "homeassistant": "0.111.0",
+  "requirements": ["oauthlib", "requests_oauthlib"],
+  "config_flow": true
+}

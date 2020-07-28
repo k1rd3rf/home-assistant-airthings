@@ -1,0 +1,17 @@
+default_config:
+
+logger:
+  default: info
+  logs:
+    custom_components.airthings: debug
+    homeassistant.components.airthings: debug
+    homeassistant.setup: debug
+    homeassistant.loader: warning
+
+homeassistant:
+  external_url: http://localhost:8123
+  internal_url: http://localhost:8123
+
+airthings:
+  client_id: !secret airthings_client_id
+  client_secret: !secret airthings_client_secret
