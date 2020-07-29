@@ -28,7 +28,7 @@ SENSOR_TYPES = dict(
     voc=AirthingsSensorType('TVOC', "mdi:chemical-weapon", CONCENTRATION_PARTS_PER_BILLION),
     pressure=AirthingsSensorType('Pressure', "mdi:gauge", PRESSURE_MBAR, DEVICE_CLASS_PRESSURE),
     radonShortTermAvg=AirthingsSensorType('Radon Short term average', "mdi:atom", f"Bq/{VOLUME_CUBIC_METERS} 24h avg"),
-    light=AirthingsSensorType('Light', "mdi:white-balance-sunny", UNIT_PERCENTAGE, DEVICE_CLASS_ILLUMINANCE),
+    light=AirthingsSensorType('Light level', "mdi:white-balance-sunny", UNIT_PERCENTAGE, DEVICE_CLASS_ILLUMINANCE),
     time=AirthingsSensorType('Last synced', "mdi:clock", device_class=DEVICE_CLASS_TIMESTAMP,
                              transform=lambda d: datetime.utcfromtimestamp(d).isoformat()),
 )
