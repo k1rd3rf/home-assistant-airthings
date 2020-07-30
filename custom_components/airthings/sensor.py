@@ -22,7 +22,9 @@ async def async_setup_entry(hass, config_entry, async_add_entities):
                 device = location.devices.get(d_id)
                 for f in device.data:
                     if f not in SENSOR_TYPES:
-                        _LOGGER.warning("Field %s not represented in sensor types for device %s", f, d_id)
+                        _LOGGER.warning(
+                            "Field %s not represented in sensor types for device %s", f,
+                            d_id)
                         continue
                     entities += [AirthingsSensor(device, f)]
 

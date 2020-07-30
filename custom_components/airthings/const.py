@@ -1,8 +1,11 @@
 from datetime import timedelta, datetime
 
-from homeassistant.const import UNIT_PERCENTAGE, TEMP_CELSIUS, CONCENTRATION_PARTS_PER_MILLION, \
-    CONCENTRATION_PARTS_PER_BILLION, PRESSURE_MBAR, VOLUME_CUBIC_METERS, DEVICE_CLASS_HUMIDITY, \
-    DEVICE_CLASS_TEMPERATURE, DEVICE_CLASS_PRESSURE, DEVICE_CLASS_ILLUMINANCE, DEVICE_CLASS_TIMESTAMP
+from homeassistant.const import UNIT_PERCENTAGE, TEMP_CELSIUS, \
+    CONCENTRATION_PARTS_PER_MILLION, \
+    CONCENTRATION_PARTS_PER_BILLION, PRESSURE_MBAR, VOLUME_CUBIC_METERS, \
+    DEVICE_CLASS_HUMIDITY, \
+    DEVICE_CLASS_TEMPERATURE, DEVICE_CLASS_PRESSURE, DEVICE_CLASS_ILLUMINANCE, \
+    DEVICE_CLASS_TIMESTAMP
 
 DOMAIN = 'airthings'
 MANUFACTURER = "Airthings"
@@ -23,13 +26,22 @@ class AirthingsSensorType:
 
 
 SENSOR_TYPES = dict(
-    humidity=AirthingsSensorType('Humidity', "mdi:water-percent", UNIT_PERCENTAGE, DEVICE_CLASS_HUMIDITY),
-    temp=AirthingsSensorType('Temperature', "mdi:thermometer", TEMP_CELSIUS, DEVICE_CLASS_TEMPERATURE),
-    co2=AirthingsSensorType('CO2', "mdi:periodic-table-co2", CONCENTRATION_PARTS_PER_MILLION),
-    voc=AirthingsSensorType('TVOC', "mdi:chemical-weapon", CONCENTRATION_PARTS_PER_BILLION),
-    pressure=AirthingsSensorType('Pressure', "mdi:gauge", PRESSURE_MBAR, DEVICE_CLASS_PRESSURE),
-    radonShortTermAvg=AirthingsSensorType('Radon Short term average', "mdi:atom", f"Bq/{VOLUME_CUBIC_METERS} 24h avg"),
-    light=AirthingsSensorType('Light level', "mdi:white-balance-sunny", UNIT_PERCENTAGE, DEVICE_CLASS_ILLUMINANCE),
-    time=AirthingsSensorType('Last synced', "mdi:clock", device_class=DEVICE_CLASS_TIMESTAMP,
-                             transform=lambda d: datetime.fromtimestamp(d).isoformat() if d is not None else None),
+    humidity=AirthingsSensorType('Humidity', "mdi:water-percent", UNIT_PERCENTAGE,
+                                 DEVICE_CLASS_HUMIDITY),
+    temp=AirthingsSensorType('Temperature', "mdi:thermometer", TEMP_CELSIUS,
+                             DEVICE_CLASS_TEMPERATURE),
+    co2=AirthingsSensorType('CO2', "mdi:periodic-table-co2",
+                            CONCENTRATION_PARTS_PER_MILLION),
+    voc=AirthingsSensorType('TVOC', "mdi:chemical-weapon",
+                            CONCENTRATION_PARTS_PER_BILLION),
+    pressure=AirthingsSensorType('Pressure', "mdi:gauge", PRESSURE_MBAR,
+                                 DEVICE_CLASS_PRESSURE),
+    radonShortTermAvg=AirthingsSensorType('Radon Short term average', "mdi:atom",
+                                          f"Bq/{VOLUME_CUBIC_METERS} 24h avg"),
+    light=AirthingsSensorType('Light level', "mdi:white-balance-sunny", UNIT_PERCENTAGE,
+                              DEVICE_CLASS_ILLUMINANCE),
+    time=AirthingsSensorType('Last synced', "mdi:clock",
+                             device_class=DEVICE_CLASS_TIMESTAMP,
+                             transform=lambda d: datetime.fromtimestamp(
+                                 d).isoformat() if d is not None else None),
 )
