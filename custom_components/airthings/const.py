@@ -1,4 +1,4 @@
-from datetime import timedelta, datetime
+from datetime import timedelta, datetime, timezone
 
 from homeassistant.const import UNIT_PERCENTAGE, TEMP_CELSIUS, \
     CONCENTRATION_PARTS_PER_MILLION, \
@@ -42,6 +42,7 @@ SENSOR_TYPES = dict(
                               DEVICE_CLASS_ILLUMINANCE),
     time=AirthingsSensorType('Last synced', "mdi:clock",
                              device_class=DEVICE_CLASS_TIMESTAMP,
-                             transform=lambda d: datetime.fromtimestamp(
-                                 d).isoformat() if d is not None else None),
+                             transform=
+                             lambda d: datetime.fromtimestamp(d, timezone.utc)
+                             .isoformat() if d is not None else None),
 )
