@@ -30,5 +30,5 @@ SENSOR_TYPES = dict(
     radonShortTermAvg=AirthingsSensorType('Radon Short term average', "mdi:atom", f"Bq/{VOLUME_CUBIC_METERS} 24h avg"),
     light=AirthingsSensorType('Light level', "mdi:white-balance-sunny", UNIT_PERCENTAGE, DEVICE_CLASS_ILLUMINANCE),
     time=AirthingsSensorType('Last synced', "mdi:clock", device_class=DEVICE_CLASS_TIMESTAMP,
-                             transform=lambda d: datetime.utcfromtimestamp(d).isoformat()),
+                             transform=lambda d: datetime.fromtimestamp(d).isoformat() if d is not None else None),
 )
