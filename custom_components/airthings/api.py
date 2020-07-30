@@ -41,10 +41,7 @@ class AirthingsApi:
         return self.session.token
 
     def _request(self, method: str, path: str, **kwargs) -> Response:
-        """Make a request.
-        We don't use the built-in token refresh mechanism of OAuth2 session because
-        we want to allow overriding the token refresh logic.
-        """
+        """Make a request."""
         url = f"{API_URL}/{path}"
         try:
             return getattr(self._oauth, method)(url, **kwargs)
@@ -61,7 +58,7 @@ class AirthingsApi:
             return {}
         try:
             res = res.json()
-        except:
+        except ValueError:
             raise ValueError("Cannot parse {} as JSON".format(res))
         if "error" in res:
             raise AirthingsError(res["error"])
@@ -96,7 +93,8 @@ class AirthingsApi:
             _LOGGER.error("Did not find devices on location_id %s", location_id)
             raise AirthingsError(data)
 
-        _LOGGER.debug("Received latest samples for location (%s): %s", location_id, data["devices"])
+        _LOGGER.debug("Received latest samples for location (%s): %s", location_id,
+                      data["devices"])
         samples = dict()
         for d in data["devices"]:
             device_id = d.get('id')
@@ -124,7 +122,8 @@ class AirthingsLocation:
         for d_id in self._samples:
             samples = self._samples.get(d_id)
             if d_id not in self.devices:
-                _LOGGER.warning("Device not created for %s, but got data: %s", d_id, samples)
+                _LOGGER.warning("Device not created for %s, but got data: %s", d_id,
+                                samples)
                 continue
             self.devices.get(d_id).data = samples
 
@@ -133,7 +132,7 @@ class AirthingsLocation:
         return self._id
 
     def __repr__(self):
-        return "AirthingsLocation(id={}, name='{}', labels={}, devices={})".format(
+        return "AirthingsLocation(id={}, name={}, labels={}, devices={})".format(
             self._id,
             self.name,
             self.labels,
@@ -150,7 +149,7 @@ class AirthingsDevice:
         self.device_type = data.get('deviceType', 'UNKNOWN')
 
     def __repr__(self):
-        return "AirthingsDevice(id={}, device_type='{}', name='{}', location_name='{}', data={})".format(
+        return "AirthingsDevice(id={}, type={}, name={}, location={}, data={})".format(
             self._id,
             self.device_type,
             self.name,
