@@ -8,5 +8,6 @@ Add `airthings_client_id` and `airthings_client_secret` for the Airthings API in
 airthings:
   client_id: !secret airthings_client_id
   client_secret: !secret airthings_client_secret
+  organization_id: !secret airthings_organization_id (OPTIONAL)
 ```
 

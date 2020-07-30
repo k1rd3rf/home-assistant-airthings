@@ -1,5 +1,6 @@
 import logging
 from asyncio import run_coroutine_threadsafe
+from urllib.parse import urlencode
 
 from homeassistant import config_entries, core
 from homeassistant.helpers import config_entry_oauth2_flow
@@ -9,7 +10,7 @@ from oauthlib.oauth2 import TokenExpiredError
 from requests import Response
 from requests_oauthlib import OAuth2Session as RequestOAuth2Session
 
-from .const import API_URL, SCAN_INTERVAL
+from .const import API_URL, SCAN_INTERVAL, DOMAIN, CONF_ORGANIZATION_ID
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -29,6 +30,7 @@ class AirthingsApi:
         self.config_entry = config_entry
         self.session = OAuth2Session(hass, config_entry, implementation)
         self._oauth = RequestOAuth2Session(token=self.session.token)
+        self.organization_id = hass.data[DOMAIN].get(CONF_ORGANIZATION_ID, None)
         self.locations = []
         self.devices = []
 
@@ -42,7 +44,9 @@ class AirthingsApi:
 
     def _request(self, method: str, path: str, **kwargs) -> Response:
         """Make a request."""
-        url = f"{API_URL}/{path}"
+        parameters = urlencode({'organizationId': self.organization_id}) \
+            if self.organization_id is not None else ""
+        url = f"{API_URL}/{path}?%s" % parameters
         try:
             return getattr(self._oauth, method)(url, **kwargs)
         except TokenExpiredError:

@@ -16,7 +16,8 @@ from requests import HTTPError
 
 from .api import AirthingsApi
 from .config_flow import OAuth2FlowHandler
-from .const import DOMAIN, OAUTH2_AUTHORIZE, OAUTH2_TOKEN, SCAN_INTERVAL
+from .const import DOMAIN, OAUTH2_AUTHORIZE, OAUTH2_TOKEN, SCAN_INTERVAL, \
+    CONF_ORGANIZATION_ID
 
 CONFIG_SCHEMA = vol.Schema(
     {
@@ -24,6 +25,7 @@ CONFIG_SCHEMA = vol.Schema(
             {
                 vol.Required(CONF_CLIENT_ID): cv.string,
                 vol.Required(CONF_CLIENT_SECRET): cv.string,
+                vol.Optional(CONF_ORGANIZATION_ID): cv.string,
             }
         )
     },
@@ -36,7 +38,9 @@ PLATFORMS = ["sensor"]
 
 
 async def async_setup(hass: HomeAssistant, config: dict) -> bool:
-    hass.data[DOMAIN] = {}
+    hass.data[DOMAIN] = {
+        CONF_ORGANIZATION_ID: config[DOMAIN].get(CONF_ORGANIZATION_ID)
+    }
 
     if DOMAIN not in config:
         return True

@@ -10,6 +10,7 @@ OAUTH2_AUTHORIZE = "https://accounts.airthings.com/authorize"
 OAUTH2_TOKEN = "https://accounts-api.airthings.com/v1/token"
 API_URL = "https://ext-api.airthings.com/v1"
 SCAN_INTERVAL = timedelta(minutes=5)
+CONF_ORGANIZATION_ID = "organization_id"
 
 
 class AirthingsSensorType:

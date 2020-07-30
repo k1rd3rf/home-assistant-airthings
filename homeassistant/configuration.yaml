@@ -15,3 +15,4 @@ homeassistant:
 airthings:
   client_id: !secret airthings_client_id
   client_secret: !secret airthings_client_secret
+  organization_id: !secret airthings_organization_id
