@@ -42,7 +42,6 @@ SENSOR_TYPES = dict(
                               DEVICE_CLASS_ILLUMINANCE),
     time=AirthingsSensorType('Last synced', "mdi:clock",
                              device_class=DEVICE_CLASS_TIMESTAMP,
-                             transform=
-                             lambda d: datetime.fromtimestamp(d, timezone.utc)
+                             transform=lambda d: datetime.fromtimestamp(d, timezone.utc)
                              .isoformat() if d is not None else None),
 )
