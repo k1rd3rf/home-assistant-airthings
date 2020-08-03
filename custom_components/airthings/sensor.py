@@ -21,6 +21,8 @@ async def async_setup_entry(hass, config_entry, async_add_entities):
             for d_id in location.devices:
                 device = location.devices.get(d_id)
                 for f in device.data:
+                    if f == "time":
+                        continue
                     if f not in SENSOR_TYPES:
                         _LOGGER.warning(
                             "Field %s not represented in sensor types for device %s", f,
@@ -39,13 +41,13 @@ class AirthingsSensor(Entity):
         self._device = device
         self._sensor_type = sensor_type
         self._device_name = f"{self._device.location_name} {self._device.name}"
-        self._name = f"{MANUFACTURER} {self._device_name} {SENSOR_TYPES.get(sensor_type).name}"
+        self._short_name = f"{self._device_name} {SENSOR_TYPES.get(sensor_type).name}"
+        self._name = f"{MANUFACTURER} {self._short_name}"
 
     @property
     def state(self):
         """Return data for the specific sensor on the device."""
-        value = self._device.data.get(self._sensor_type, None)
-        return SENSOR_TYPES[self._sensor_type].transform(value)
+        return self._device.data.get(self._sensor_type, None)
 
     @property
     def available(self):
@@ -87,6 +89,13 @@ class AirthingsSensor(Entity):
     @property
     def device_class(self) -> Optional[str]:
         return SENSOR_TYPES[self._sensor_type].device_class
+
+    @property
+    def device_state_attributes(self):
+        """Return the state attributes of the device."""
+        return dict(
+            last_synced=self._device.last_synced,
+        )
 
     def update(self):
         """Update the entity."""

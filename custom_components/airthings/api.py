@@ -1,5 +1,6 @@
 import logging
 from asyncio import run_coroutine_threadsafe
+from datetime import timezone, datetime
 from urllib.parse import urlencode
 
 from homeassistant import config_entries, core
@@ -172,6 +173,12 @@ class AirthingsDevice:
     @property
     def location_name(self):
         return self._location.name
+
+    @property
+    def last_synced(self):
+        d = self._data.get('time', None)
+        return datetime.fromtimestamp(d, timezone.utc).isoformat() \
+            if d is not None else None
 
     @property
     def data(self):
