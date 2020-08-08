@@ -29,7 +29,7 @@ SENSOR_TYPES = dict(
                                  DEVICE_CLASS_HUMIDITY),
     temp=AirthingsSensorType('Temperature', "mdi:thermometer", TEMP_CELSIUS,
                              DEVICE_CLASS_TEMPERATURE),
-    co2=AirthingsSensorType('CO2', "mdi:periodic-table-co2",
+    co2=AirthingsSensorType('CO2', "mdi:molecule-co2",
                             CONCENTRATION_PARTS_PER_MILLION),
     voc=AirthingsSensorType('TVOC', "mdi:chemical-weapon",
                             CONCENTRATION_PARTS_PER_BILLION),
