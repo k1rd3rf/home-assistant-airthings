@@ -1,0 +1,80 @@
+path: view_entities
+title: Entities
+cards:
+  - type: custom:auto-entities
+    card:
+      type: entities
+      columns: 3
+      title: Radon
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_radon_short_term_average"
+    sort:
+      method: state
+      numeric: true
+  - type: custom:auto-entities
+    card:
+      type: entities
+      columns: 3
+      title: TVOC
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_tvoc"
+    sort:
+      method: state
+      numeric: true
+  - type: custom:auto-entities
+    card:
+      type: entities
+      columns: 3
+      title: CO2
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_co2"
+    sort:
+      method: state
+      numeric: true
+  - type: custom:auto-entities
+    card:
+      type: entities
+      columns: 3
+      title: Temperature
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_temperature"
+    sort:
+      method: state
+      numeric: true
+  - type: custom:auto-entities
+    card:
+      type: entities
+      columns: 3
+      title: Humidity
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_humidity"
+    sort:
+      method: state
+      numeric: true
+  - type: custom:auto-entities
+    card:
+      type: entities
+      columns: 3
+      title: Pressure
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_pressure"
+    sort:
+      method: state
+      numeric: true
+  - type: custom:auto-entities
+    card:
+      type: entities
+      columns: 3
+      title: Light level
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_light_level"
+    sort:
+      method: state
+      numeric: true

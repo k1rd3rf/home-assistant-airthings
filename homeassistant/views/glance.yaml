@@ -1,0 +1,73 @@
+path: view_glance
+title: Glance
+cards:
+  - type: custom:auto-entities
+    card:
+      type: glance
+      columns: 3
+      title: Radon
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_radon_short_term_average"
+    sort:
+      method: name
+  - type: custom:auto-entities
+    card:
+      type: glance
+      columns: 3
+      title: TVOC
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_tvoc"
+    sort:
+      method: name
+  - type: custom:auto-entities
+    card:
+      type: glance
+      columns: 3
+      title: CO2
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_co2"
+    sort:
+      method: name
+  - type: custom:auto-entities
+    card:
+      type: glance
+      columns: 3
+      title: Temperature
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_temperature"
+    sort:
+      method: name
+  - type: custom:auto-entities
+    card:
+      type: glance
+      columns: 3
+      title: Humidity
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_humidity"
+    sort:
+      method: name
+  - type: custom:auto-entities
+    card:
+      type: glance
+      columns: 3
+      title: Pressure
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_pressure"
+    sort:
+      method: name
+  - type: custom:auto-entities
+    card:
+      type: glance
+      columns: 3
+      title: Light level
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_light_level"
+    sort:
+      method: name
