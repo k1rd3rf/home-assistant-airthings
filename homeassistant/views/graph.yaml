@@ -1,0 +1,66 @@
+path: view_graphs
+title: Graphs
+cards:
+  - type: custom:auto-entities
+    card:
+      type: custom:mini-graph-card
+      name: Radon
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_radon_short_term_average"
+    sort:
+      method: name
+  - type: custom:auto-entities
+    card:
+      type: custom:mini-graph-card
+      name: TVOC
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_tvoc"
+    sort:
+      method: name
+  - type: custom:auto-entities
+    card:
+      type: custom:mini-graph-card
+      name: CO2
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_co2"
+    sort:
+      method: name
+  - type: custom:auto-entities
+    card:
+      type: custom:mini-graph-card
+      name: Temperature
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_temperature"
+    sort:
+      method: name
+  - type: custom:auto-entities
+    card:
+      type: custom:mini-graph-card
+      name: Humidity
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_humidity"
+    sort:
+      method: name
+  - type: custom:auto-entities
+    card:
+      type: custom:mini-graph-card
+      name: Pressure
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_pressure"
+    sort:
+      method: name
+  - type: custom:auto-entities
+    card:
+      type: custom:mini-graph-card
+      name: Light level
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_light_level"
+    sort:
+      method: name
