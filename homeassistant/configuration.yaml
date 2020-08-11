@@ -11,6 +11,7 @@ logger:
 homeassistant:
   external_url: http://localhost:8123
   internal_url: http://localhost:8123
+  packages: !include_dir_named packages/
 
 airthings:
   client_id: !secret airthings_client_id
