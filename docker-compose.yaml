@@ -7,10 +7,19 @@ services:
     container_name: homeassistant
     volumes:
       - ./homeassistant:/config
-      - ./custom_components:/config/custom_components
+      - ./extra_components/data:/config/custom_components
+      - ./custom_components/airthings:/config/custom_components/airthings
     restart: on-failure
     healthcheck:
       test: ["CMD", "curl", "-f", "http://127.0.0.1:8123"]
       interval: 30s
       timeout: 10s
       retries: 6
+    depends_on:
+      - extra_components
+  extra_components:
+    build: ./extra_components
+    volumes:
+      - ./extra_components/data:/home
+    healthcheck:
+      test: bash -c "[ -d /home ]"
