@@ -1,7 +1,7 @@
 version: "3"
 services:
   homeassistant:
-    image: homeassistant/home-assistant:0.111.4
+    image: homeassistant/home-assistant:0.113.3
     ports:
       - "8123:8123"
     container_name: homeassistant
