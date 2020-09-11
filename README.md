@@ -26,3 +26,6 @@ airthings:
   client_secret: !secret airthings_client_secret
   organization_id: !secret airthings_organization_id (OPTIONAL)
 ```
+
+## Example
+There is a example configuration in the [homeassistant](./homeassistant)-folder. You need to add a `secrets.yaml` file that contains the client id and secret. It's also possible to launch this using docker compose.
