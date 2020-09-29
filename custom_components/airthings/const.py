@@ -1,6 +1,6 @@
 from datetime import timedelta
 
-from homeassistant.const import UNIT_PERCENTAGE, TEMP_CELSIUS, \
+from homeassistant.const import PERCENTAGE, TEMP_CELSIUS, \
     CONCENTRATION_PARTS_PER_MILLION, \
     CONCENTRATION_PARTS_PER_BILLION, PRESSURE_MBAR, DEVICE_CLASS_HUMIDITY, \
     DEVICE_CLASS_TEMPERATURE, DEVICE_CLASS_PRESSURE, DEVICE_CLASS_ILLUMINANCE, \
@@ -26,7 +26,7 @@ class AirthingsSensorType:
 
 SENSOR_TYPES = dict(
     humidity=AirthingsSensorType('Humidity', "mdi:water-percent", 'humidity',
-                                 UNIT_PERCENTAGE, DEVICE_CLASS_HUMIDITY),
+                                 PERCENTAGE, DEVICE_CLASS_HUMIDITY),
     temp=AirthingsSensorType('Temperature', "mdi:thermometer", 'temp', TEMP_CELSIUS,
                              DEVICE_CLASS_TEMPERATURE),
     co2=AirthingsSensorType('CO2', "mdi:molecule-co2", 'co2',
@@ -36,7 +36,7 @@ SENSOR_TYPES = dict(
     pressure=AirthingsSensorType('Pressure', "mdi:gauge", 'pressure', PRESSURE_MBAR,
                                  DEVICE_CLASS_PRESSURE),
     light=AirthingsSensorType('Light level', "mdi:white-balance-sunny", 'light',
-                              UNIT_PERCENTAGE, DEVICE_CLASS_ILLUMINANCE),
+                              PERCENTAGE, DEVICE_CLASS_ILLUMINANCE),
     radonShortTermAvg=AirthingsSensorType('Radon Short term average', "mdi:atom",
                                           'radonShortTermAvg',
                                           f"Bq/{VOLUME_CUBIC_METERS} 24h avg"),

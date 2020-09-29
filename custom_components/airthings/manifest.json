@@ -4,7 +4,7 @@
   "documentation": "https://developer.airthings.com/api-docs.html",
   "dependencies": ["http"],
   "codeowners": [],
-  "homeassistant": "0.111.0",
+  "homeassistant": "0.115.4",
   "requirements": ["oauthlib", "requests_oauthlib"],
   "config_flow": true
 }
