@@ -2,3 +2,10 @@
 *.iml
 
 secrets.yaml
+
+bin/
+include/
+lib/
+venv/
+pyvenv.cfg
+requirements.txt

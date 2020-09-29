@@ -40,6 +40,7 @@ SENSOR_TYPES = dict(
     radonShortTermAvg=AirthingsSensorType('Radon Short term average', "mdi:atom",
                                           'radonShortTermAvg',
                                           f"Bq/{VOLUME_CUBIC_METERS} 24h avg"),
+    mold=AirthingsSensorType('Mold risk indicator', 'mdi:virus-outline', 'mold', '/ 10'),
     time=AirthingsSensorType('Last synced', "mdi:clock", 'time',
                              device_class=DEVICE_CLASS_TIMESTAMP),
 )
