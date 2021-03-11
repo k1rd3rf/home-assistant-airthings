@@ -71,3 +71,53 @@ cards:
         - entity_id: "sensor.airthings_*_light_level"
     sort:
       method: name
+  - type: custom:auto-entities
+    card:
+      type: glance
+      columns: 3
+      title: Virus risk
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_virus_risk_indicator"
+    sort:
+      method: name
+  - type: custom:auto-entities
+    card:
+      type: glance
+      columns: 3
+      title: Mold risk
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_mold_risk_indicator"
+    sort:
+      method: name
+  - type: custom:auto-entities
+    card:
+      type: glance
+      columns: 3
+      title: RSSI
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_rssi"
+    sort:
+      method: name
+  - type: custom:auto-entities
+    card:
+      type: glance
+      columns: 3
+      title: Battery
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_battery"
+    sort:
+      method: name
+  - type: custom:auto-entities
+    card:
+      type: glance
+      columns: 3
+      title: Relay device
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_relay_device"
+    sort:
+      method: name

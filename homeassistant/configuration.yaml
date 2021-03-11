@@ -16,7 +16,16 @@ homeassistant:
 airthings:
   client_id: !secret airthings_client_id
   client_secret: !secret airthings_client_secret
+  organization_id: !secret airthings_organization_id
 
 lovelace:
   mode: yaml
   resources: !include resources.yaml
+  dashboards:
+    lovelace-generated: # Needs to contain a hyphen (-)
+      mode: yaml
+      filename: notexist.yaml
+      title: Generated
+      icon: mdi:tools
+      show_in_sidebar: true
+      require_admin: true
