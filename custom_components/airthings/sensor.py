@@ -1,10 +1,12 @@
 import logging
+from homeassistant.helpers.entity import Entity
 from typing import Optional
 
-from homeassistant.helpers.entity import Entity
-
 from .api import AirthingsDevice
-from .const import DOMAIN, MANUFACTURER, get_airthings_sensor_type, SENSOR_TYPES
+from .const import DOMAIN, \
+    MANUFACTURER, \
+    SENSOR_TYPES, \
+    get_airthings_sensor_type
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -72,10 +74,10 @@ class AirthingsSensor(Entity):
     def device_info(self):
         """Return info about the device."""
         return {
-            "identifiers": {(DOMAIN, self._device.device_id)},
-            "name": self._device_name,
+            "identifiers":  { (DOMAIN, self._device.device_id) },
+            "name":         self._device_name,
             "manufacturer": f"{MANUFACTURER}",
-            "model": self._device.device_type,
+            "model":        self._device.device_type,
         }
 
     @property
@@ -94,7 +96,7 @@ class AirthingsSensor(Entity):
     def device_state_attributes(self):
         """Return the state attributes of the device."""
         return dict(
-            last_synced=self._device.last_synced,
+            last_synced = self._device.last_synced,
         )
 
     def update(self):
