@@ -6,5 +6,6 @@
   "codeowners": [],
   "homeassistant": "2021.3.3",
   "requirements": ["oauthlib", "requests_oauthlib"],
-  "config_flow": true
+  "config_flow": true,
+  "version": "1.0.0-rc7"
 }
