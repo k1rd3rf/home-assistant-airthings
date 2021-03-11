@@ -48,6 +48,15 @@ cards:
       method: name
   - type: custom:auto-entities
     card:
+      type: glance
+      name: Rssi
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_rssi"
+    sort:
+      method: name
+  - type: custom:auto-entities
+    card:
       type: custom:mini-graph-card
       name: Pressure
     filter:

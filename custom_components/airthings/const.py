@@ -9,7 +9,10 @@ from homeassistant.const import CONCENTRATION_PARTS_PER_BILLION, \
     PERCENTAGE, \
     PRESSURE_MBAR, \
     TEMP_CELSIUS, \
-    VOLUME_CUBIC_METERS
+    VOLUME_CUBIC_METERS, \
+    SIGNAL_STRENGTH_DECIBELS_MILLIWATT, \
+    DEVICE_CLASS_SIGNAL_STRENGTH, \
+    DEVICE_CLASS_BATTERY
 
 DOMAIN = "airthings"
 MANUFACTURER = "Airthings"
@@ -93,6 +96,25 @@ SENSOR_TYPES = dict(
         icon = "mdi:clock",
         field = "time",
         device_class = DEVICE_CLASS_TIMESTAMP,
+    ),
+    rssi = AirthingsSensorType(
+        name = "RSSI",
+        icon = "mdi:signal",
+        field = "rssi",
+        unit = SIGNAL_STRENGTH_DECIBELS_MILLIWATT,
+        device_class = DEVICE_CLASS_SIGNAL_STRENGTH,
+    ),
+        battery = AirthingsSensorType(
+        name = "Battery",
+        icon = "mdi:battery",
+        field = "battery",
+        unit = PERCENTAGE,
+        device_class = DEVICE_CLASS_BATTERY,
+    ),
+        relayDeviceType = AirthingsSensorType(
+        name = "Relay device type",
+        icon = "mdi:battery",
+        field = "battery"
     ),
 )
 
