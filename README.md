@@ -34,3 +34,13 @@ There is an example configuration in the [homeassistant](./homeassistant)-folder
 ```
 docker-compose up --remove-orphans --build homeassistant
 ```
+
+* Open http://localhost:8123/
+* Create an account
+* Go to Configuration -> Integrations
+* Add integration for Airthings
+
+#### Bonus stuff
+* Add integration for HACS
+* Upgrade the HACS dependencies
+* Go to the overview tab to see your entities and sensor values
