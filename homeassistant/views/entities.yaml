@@ -114,17 +114,6 @@ cards:
     card:
       type: entities
       columns: 3
-      title: RSSI
-    filter:
-      include:
-        - entity_id: "sensor.airthings_*_rssi"
-    sort:
-      method: state
-      numeric: true
-  - type: custom:auto-entities
-    card:
-      type: entities
-      columns: 3
       title: Battery
     filter:
       include:

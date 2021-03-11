@@ -113,7 +113,7 @@ SENSOR_TYPES = dict(
     ),
     relayDeviceType = AirthingsSensorType(
         name = "Relay device type",
-        icon = "mdi:relayDeviceType",
+        icon = "mdi:network-outline",
         field = "relayDeviceType"
     ),
 )

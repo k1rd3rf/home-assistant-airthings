@@ -105,16 +105,6 @@ cards:
     card:
       type: glance
       columns: 3
-      title: RSSI
-    filter:
-      include:
-        - entity_id: "sensor.airthings_*_rssi"
-    sort:
-      method: name
-  - type: custom:auto-entities
-    card:
-      type: glance
-      columns: 3
       title: Battery
     filter:
       include:

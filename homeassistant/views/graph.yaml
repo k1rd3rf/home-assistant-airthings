@@ -94,15 +94,6 @@ cards:
   - type: custom:auto-entities
     card:
       type: custom:mini-graph-card
-      title: RSSI
-    filter:
-      include:
-        - entity_id: "sensor.airthings_*_rssi"
-    sort:
-      method: name
-  - type: custom:auto-entities
-    card:
-      type: custom:mini-graph-card
       title: Battery
     filter:
       include:
