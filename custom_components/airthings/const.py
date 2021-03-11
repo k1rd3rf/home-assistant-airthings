@@ -104,14 +104,14 @@ SENSOR_TYPES = dict(
         unit = SIGNAL_STRENGTH_DECIBELS_MILLIWATT,
         device_class = DEVICE_CLASS_SIGNAL_STRENGTH,
     ),
-        battery = AirthingsSensorType(
+    battery = AirthingsSensorType(
         name = "Battery",
         icon = "mdi:battery",
         field = "battery",
         unit = PERCENTAGE,
         device_class = DEVICE_CLASS_BATTERY,
     ),
-        relayDeviceType = AirthingsSensorType(
+    relayDeviceType = AirthingsSensorType(
         name = "Relay device type",
         icon = "mdi:battery",
         field = "battery"
