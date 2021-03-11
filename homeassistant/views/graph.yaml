@@ -48,7 +48,7 @@ cards:
       method: name
   - type: custom:auto-entities
     card:
-      type: glance
+      type: custom:mini-graph-card
       name: Rssi
     filter:
       include:
