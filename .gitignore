@@ -9,3 +9,4 @@ lib/
 venv/
 pyvenv.cfg
 requirements.txt
+__pycache__
