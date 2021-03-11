@@ -38,6 +38,16 @@ cards:
     card:
       type: entities
       columns: 3
+      title: Rssi
+    filter:
+      include:
+        - entity_id: "sensor.airthings_*_rssi"
+    sort:
+      method: name
+  - type: custom:auto-entities
+    card:
+      type: entities
+      columns: 3
       title: Temperature
     filter:
       include:
@@ -104,17 +114,6 @@ cards:
     card:
       type: entities
       columns: 3
-      title: RSSI
-    filter:
-      include:
-        - entity_id: "sensor.airthings_*_rssi"
-    sort:
-      method: state
-      numeric: true
-  - type: custom:auto-entities
-    card:
-      type: entities
-      columns: 3
       title: Battery
     filter:
       include:
@@ -129,7 +128,7 @@ cards:
       title: Relay device
     filter:
       include:
-        - entity_id: "sensor.airthings_*_relay_device"
+        - entity_id: "sensor.airthings_*_relay_device_type"
     sort:
       method: state
       numeric: true
