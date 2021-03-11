@@ -2,7 +2,7 @@ FROM alpine
 
 RUN apk --no-cache add wget git unzip
 
-ENV HACS_VERSION 1.3.3
+ENV HACS_VERSION 1.11.3
 
 VOLUME /home
 

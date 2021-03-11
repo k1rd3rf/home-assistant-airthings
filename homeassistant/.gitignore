@@ -4,3 +4,4 @@ home-assistant_v2.db
 *.log
 .storage/
 
+blueprints/
