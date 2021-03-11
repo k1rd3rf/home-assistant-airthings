@@ -13,10 +13,10 @@ cards:
   - type: custom:auto-entities
     card:
       type: custom:mini-graph-card
-      name: TVOC
+      name: VOC
     filter:
       include:
-        - entity_id: "sensor.airthings_*_tvoc"
+        - entity_id: "sensor.airthings_*_voc"
     sort:
       method: name
   - type: custom:auto-entities

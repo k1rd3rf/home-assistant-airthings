@@ -16,10 +16,10 @@ cards:
     card:
       type: entities
       columns: 3
-      title: TVOC
+      title: VOC
     filter:
       include:
-        - entity_id: "sensor.airthings_*_tvoc"
+        - entity_id: "sensor.airthings_*_voc"
     sort:
       method: state
       numeric: true

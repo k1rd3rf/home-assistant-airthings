@@ -15,10 +15,10 @@ cards:
     card:
       type: glance
       columns: 3
-      title: TVOC
+      title: VOC
     filter:
       include:
-        - entity_id: "sensor.airthings_*_tvoc"
+        - entity_id: "sensor.airthings_*_voc"
     sort:
       method: name
   - type: custom:auto-entities
