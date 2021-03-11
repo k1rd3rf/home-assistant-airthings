@@ -128,6 +128,6 @@ cards:
       title: Relay device
     filter:
       include:
-        - entity_id: "sensor.airthings_*_relay_device"
+        - entity_id: "sensor.airthings_*_relay_device_type"
     sort:
       method: name
