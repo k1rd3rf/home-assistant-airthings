@@ -28,4 +28,9 @@ airthings:
 ```
 
 ## Example
-There is a example configuration in the [homeassistant](./homeassistant)-folder. You need to add a `secrets.yaml` file that contains the client id and secret. It's also possible to launch this using docker compose.
+There is an example configuration in the [homeassistant](./homeassistant)-folder. You need to add a `secrets.yaml` file that contains the client id and secret. 
+
+### Running example configuration with Docker compose
+```
+docker-compose up --remove-orphans --build homeassistant
+```
